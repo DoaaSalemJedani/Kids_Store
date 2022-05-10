@@ -6,7 +6,7 @@
 package cpit251_kidsgifts;
 
 /**
- *
+ * Hind-Test
  * @author duaas
  */
 public class Customer extends User {
