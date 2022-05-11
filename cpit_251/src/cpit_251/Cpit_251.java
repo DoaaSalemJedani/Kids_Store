@@ -15,7 +15,7 @@ public class Cpit_251 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("tt");
+        System.out.println("ttoo");
         // TODO code application logic here
     }
     
