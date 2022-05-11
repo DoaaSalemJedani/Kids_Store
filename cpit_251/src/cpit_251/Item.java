@@ -14,9 +14,12 @@ public class Item extends Seller {
     public int ItemID;
     public double Price;
 
-    public Item(int Phone, char password, String FirstName, String LastName) {
-        super(Phone, password, FirstName, LastName);
+    public Item(int ItemID, double Price, String StoreName, String Phone, char password, String FirstName, String LastName) {
+        super(StoreName, Phone, password, FirstName, LastName);
+        this.ItemID = ItemID;
+        this.Price = Price;
     }
+
 
   
 

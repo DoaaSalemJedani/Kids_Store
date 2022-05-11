@@ -11,9 +11,11 @@ package cpit_251;
  */
 public class Manager extends Seller {
 
-    public Manager(int Phone, char password, String FirstName, String LastName) {
-        super(Phone, password, FirstName, LastName);
+    public Manager(String StoreName, String Phone, char password, String FirstName, String LastName) {
+        super(StoreName, Phone, password, FirstName, LastName);
     }
+
+ 
 
    
     
