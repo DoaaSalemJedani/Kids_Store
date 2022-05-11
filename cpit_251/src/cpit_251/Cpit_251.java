@@ -5,6 +5,8 @@
  */
 package cpit_251;
 
+import java.io.FileNotFoundException;
+
 /**
  *
  * @author lana
@@ -14,7 +16,7 @@ public class Cpit_251 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
       
         Registration r= new Registration();
        r.UserRegistration();

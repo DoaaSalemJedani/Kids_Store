@@ -46,7 +46,7 @@ public class Customer extends User {
 public void AddReview (String OrderState ) { 
         
         
-       if(Order.OrderState=="Delevird"){
+    if(Order.OrderState=="Delevird"){
            Scanner inputREVIEW=new Scanner(System.in);
            System.out.println("-----------------------------------------------------");
            System.out.println(" review the seller shop");
