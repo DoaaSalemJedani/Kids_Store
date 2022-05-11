@@ -15,12 +15,11 @@ public class Cpit_251 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-     Seller s;  
+      
+        Registration r= new Registration();
+       r.UserRegistration();
+       r.Login();
         
-        s=new Seller( "StoreName", "Phone", 'p', "FirstName", "LastName");
-
-        s.AddItemToStore(100);
         
-        //File for the items 
     
 }}
