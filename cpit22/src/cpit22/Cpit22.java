@@ -16,7 +16,7 @@ public class Cpit22 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("ii");
+        System.out.println("iiiiiii");
     }
     
 }
