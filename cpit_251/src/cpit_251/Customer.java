@@ -46,7 +46,7 @@ public class Customer extends User {
 public void AddReview (String OrderState ) { 
         
         
-    if(Order.OrderState=="Delevird"){
+  
            Scanner inputREVIEW=new Scanner(System.in);
            System.out.println("-----------------------------------------------------");
            System.out.println(" review the seller shop");
@@ -77,10 +77,7 @@ public void AddReview (String OrderState ) {
            
            // item review , we must complete add item to cart method
            //making an array and print it in the shop file information 
-  
-    }else {
-           System.out.println(" wait until it Delevird ");
-       }
+
        
        
         
