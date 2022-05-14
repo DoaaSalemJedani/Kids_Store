@@ -18,10 +18,7 @@ public class Cpit_251 {
      */
     public static void main(String[] args) throws FileNotFoundException {
       
-        Registration r= new Registration();
-       r.UserRegistration();
-       r.Login();
-        
+       
         
     
 }}
