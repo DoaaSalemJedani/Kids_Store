@@ -11,12 +11,12 @@ package cpit_251;
  */
 public class User {
 
-    private String Phone;
-    private char password;
+    String Phone;
+    String password;
     public String FirstName;
     public String LastName;
 
-    public User(String Phone, char password, String FirstName, String LastName) {
+    public User(String Phone, String password, String FirstName, String LastName) {
         this.Phone = Phone;
         this.password = password;
         this.FirstName = FirstName;
@@ -31,14 +31,13 @@ public class User {
         this.Phone = Phone;
     }
 
-    
-
-
-    public char getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(char password) {
+ 
+
+    public void setPassword(String password) {
         this.password = password;
     }
 

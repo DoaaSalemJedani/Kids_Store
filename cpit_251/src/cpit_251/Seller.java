@@ -5,13 +5,8 @@
  */
 package cpit_251;
 
-/**
- *
- * @author Sara
- */
 
-
-
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,11 +17,12 @@ import java.util.Scanner;
 
 /**
  *
- * @author duaas
+ * @author Sara
  */
+
 public class Seller extends User {
 
-     public static String StoreName;
+    public static String StoreName;
     public static String Item_Id;
     public static int addItemLimt = 50;
     public static double price_item;
@@ -34,15 +30,11 @@ public class Seller extends User {
     public static String itemName;
     public static String item_remaining;
 
-    public Seller(String StoreName, int RegistrationNumber, int Item_Id, int addItemLimt, int girlLimit, int boyLimit, int unisexLimit, String Phone, char password, String FirstName, String LastName) {
+    public Seller(String Phone, String password, String FirstName, String LastName) {
         super(Phone, password, FirstName, LastName);
-        this.StoreName = StoreName;
-        this.addItemLimt = addItemLimt;
-
     }
 
-
-
+ 
     public String getStoreName() {
         return StoreName;
     }
@@ -52,6 +44,61 @@ public class Seller extends User {
     }
 
 
+    public static String getItem_Id() {
+        return Item_Id;
+    }
+
+    public static void setItem_Id(String Item_Id) {
+        Seller.Item_Id = Item_Id;
+    }
+
+    public int getAddItemLimt() {
+        return addItemLimt;
+    }
+
+    public void setAddItemLimt(int addItemLimt) {
+        this.addItemLimt = addItemLimt;
+    }
+
+    public static double getPrice_item() {
+        return price_item;
+    }
+
+    public static void setPrice_item(double price_item) {
+        Seller.price_item = price_item;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public static String getProductType() {
+        return ProductType;
+    }
+
+    public static void setProductType(String ProductType) {
+        Seller.ProductType = ProductType;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String Phone) {
+        this.Phone = Phone;
+    }
+
+    public static String getItem_remaining() {
+        return item_remaining;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
     public String getFirstName() {
         return FirstName;
@@ -68,7 +115,8 @@ public class Seller extends User {
     public void setLastName(String LastName) {
         this.LastName = LastName;
     }
-        public void updateStore()
+    
+    public void updateStore()
     {
         try {
                 FileWriter myWriter = new FileWriter("products.txt", true);
@@ -84,9 +132,27 @@ public class Seller extends User {
             }
     }
     
+    public int getTotalItemsInStore()
+    {
+        int totalItems = 0;
+        
+        try {
+                BufferedReader myReader = new BufferedReader(new FileReader("products.txt"));
+                
+                while(myReader.readLine() != null)
+                {
+                    totalItems += 1;
+                }
+                myReader.close();
 
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        
+        return totalItems;
+    }
 
-   public void AddItemToStore() throws FileNotFoundException, IOException { 
+    public void AddItemToStore() throws FileNotFoundException, IOException { 
 
  
             File myObj = new File("products.txt");
@@ -118,7 +184,7 @@ public class Seller extends User {
                     continue;
 
                 }
-                System.out.println("*** Invalid input: Enter A string from ( A-Z ,a-z ) *** ");
+                System.out.println("* Invalid input: Enter A string from ( A-Z ,a-z ) * ");
             }
 
             while (true) {
@@ -131,7 +197,7 @@ public class Seller extends User {
                     break;
 
                 } catch (InputMismatchException E) {
-                    System.out.println("*** Invalid input: Enter An integer number *** ");
+                    System.out.println("* Invalid input: Enter An integer number * ");
 
                     INPUT_price.hasNextDouble();
                     continue;
@@ -157,10 +223,22 @@ public class Seller extends User {
                     INPUT_type.hasNext();
                     continue;
                 }
-                System.out.println("*** Invalid input , try again *** ");
+                System.out.println("* Invalid input , try again * ");
 
             }
 
+//            try {
+//                FileWriter myWriter = new FileWriter("products.txt", true);
+//                myWriter.write(StoreName + "," + Item_Id + "," + ProductType + "," + itemName + "," + price_item + "SAR" +"\n");
+//                myWriter.flush();
+//                myWriter.close();
+//
+//                FileReader Reader = new FileReader("products.txt");
+//
+//                Reader.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
 
             updateStore();
             Scanner INPUT_final = new Scanner(System.in);
@@ -175,10 +253,4 @@ public class Seller extends User {
             }
         }
     }
-
-    
-    
-    
-
-
 }

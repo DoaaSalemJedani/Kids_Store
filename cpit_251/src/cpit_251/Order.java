@@ -23,11 +23,6 @@ public class Order extends Customer {
         this.OrderState = OrderState;
     }
 
-
-
-
-    
-
     public int getOrderNumber() {
         return OrderNumber;
     }
@@ -60,9 +55,5 @@ public class Order extends Customer {
 
     public String getLastName() {
         return LastName;
-    }
-    
-   
-  
-    
+    }  
 }
