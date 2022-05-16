@@ -1,26 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cpit_251;
 
-/**
- *
- * @author Sara
- */
+
 public class User {
 
-    String Phone;
-    String password;
-    public String FirstName;
-    public String LastName;
+    public static String Phone;
+    public static String password;
+    public static String FirstName;
+    public static String LastName;
 
     public User(String Phone, String password, String FirstName, String LastName) {
-        this.Phone = Phone;
-        this.password = password;
-        this.FirstName = FirstName;
-        this.LastName = LastName;
+        User.Phone = Phone;
+        User.password = password;
+        User.FirstName = FirstName;
+        User.LastName = LastName;
     }
 
     public String getPhone() {
@@ -34,8 +27,6 @@ public class User {
     public String getPassword() {
         return password;
     }
-
- 
 
     public void setPassword(String password) {
         this.password = password;
@@ -55,18 +46,6 @@ public class User {
 
     public void setLastName(String LastName) {
         this.LastName = LastName;
-    }
-
-    public void EditName(String Fname, String Lname) {
-
-    }
-
-    public void EditPhoneNumber(int PhoneNumber) {
-
-    }
-
-    private void ChangePassword(char Password) {
-
     }
 
 }

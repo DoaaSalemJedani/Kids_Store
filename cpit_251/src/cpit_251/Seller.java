@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cpit_251;
 
 
@@ -15,10 +11,6 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- *
- * @author Sara
- */
 
 public class Seller extends User {
 
@@ -34,7 +26,6 @@ public class Seller extends User {
         super(Phone, password, FirstName, LastName);
     }
 
- 
     public String getStoreName() {
         return StoreName;
     }
@@ -92,12 +83,12 @@ public class Seller extends User {
         this.Phone = Phone;
     }
 
-    public static String getItem_remaining() {
-        return item_remaining;
-    }
-
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -184,7 +175,7 @@ public class Seller extends User {
                     continue;
 
                 }
-                System.out.println("* Invalid input: Enter A string from ( A-Z ,a-z ) * ");
+                System.out.println("*** Invalid input: Enter A string from ( A-Z ,a-z ) *** ");
             }
 
             while (true) {
@@ -197,7 +188,7 @@ public class Seller extends User {
                     break;
 
                 } catch (InputMismatchException E) {
-                    System.out.println("* Invalid input: Enter An integer number * ");
+                    System.out.println("*** Invalid input: Enter An integer number *** ");
 
                     INPUT_price.hasNextDouble();
                     continue;
@@ -223,22 +214,9 @@ public class Seller extends User {
                     INPUT_type.hasNext();
                     continue;
                 }
-                System.out.println("* Invalid input , try again * ");
+                System.out.println("*** Invalid input , try again *** ");
 
             }
-
-//            try {
-//                FileWriter myWriter = new FileWriter("products.txt", true);
-//                myWriter.write(StoreName + "," + Item_Id + "," + ProductType + "," + itemName + "," + price_item + "SAR" +"\n");
-//                myWriter.flush();
-//                myWriter.close();
-//
-//                FileReader Reader = new FileReader("products.txt");
-//
-//                Reader.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
 
             updateStore();
             Scanner INPUT_final = new Scanner(System.in);
@@ -253,5 +231,5 @@ public class Seller extends User {
             }
         }
     }
+
 }
-//ss
