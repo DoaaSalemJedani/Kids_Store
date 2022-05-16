@@ -16,12 +16,14 @@ public class Order extends Customer {
     public Date OrderDate;
     public String OrderState;
 
-    public Order(int OrderNumber, Date OrderDate, String OrderState, String Phone, char password, String FirstName, String LastName) {
+    public Order(int OrderNumber, Date OrderDate, String OrderState, String Phone, String password, String FirstName, String LastName) {
         super(Phone, password, FirstName, LastName);
         this.OrderNumber = OrderNumber;
         this.OrderDate = OrderDate;
         this.OrderState = OrderState;
     }
+
+   
 
     public int getOrderNumber() {
         return OrderNumber;

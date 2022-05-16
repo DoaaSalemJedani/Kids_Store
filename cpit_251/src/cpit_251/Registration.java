@@ -3,14 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cpit_251;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package cpit251_;
 
 
+import cpit_251.Manager;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,29 +35,14 @@ public class Registration {
 
     public void UserRegistration() {
 
-        try {
+       
             File myObj = new File("RegistrationInfo.txt");
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+            
+ 
 
-        try {
-            File myObj = new File("LogInInfo.txt");
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+     
+            File myObjj = new File("LogInInfo.txt");//
+
 
         Scanner input = new Scanner(System.in);
 
@@ -69,7 +50,7 @@ public class Registration {
 
         while (true) {
             try {
-                System.out.println("Your phone number: ");
+                System.out.print("Your phone number: ");
 
                 Phone = input.nextLine();
 
@@ -107,9 +88,9 @@ public class Registration {
             try {
                 System.out.println(" ");
                 System.out.println("**The password must have at least 8 characters with no space**");
-                System.out.println("Your password: ");
+                System.out.print("Your password: ");
                 password = input.nextLine();
-                System.out.println("Enter your password again for confirmation : ");
+                System.out.print("Enter your password again for confirmation: ");
                 String PasswordValidiation = input.nextLine();
 
                 if (password.matches(PasswordValidiation) && password.length()>=8 && !(password.contains(" "))) {
@@ -129,10 +110,10 @@ public class Registration {
 
         }
 
-        System.out.println("Your First name: ");
+        System.out.print("Your First name: ");
         FirstName = input.nextLine();
 
-        System.out.println("Your Last name: ");
+        System.out.print("Your Last name: ");
         LastName = input.nextLine();
 
         Scanner inputR = new Scanner(System.in);
@@ -143,7 +124,7 @@ public class Registration {
 
             try {
 
-                System.out.println("If you have a Registration Number, press 1, if not press 2: "); 
+                System.out.print("\nIf you have a Registration Number, press 1, if not press 2: "); 
                 CustomerOrSeller = input.nextLine();
                 if (CustomerOrSeller.equals("1") || CustomerOrSeller.equals("2")) break;
 
@@ -163,7 +144,7 @@ public class Registration {
                     try {
 
                         
-                        System.out.println("Enter your Registration Number: ");
+                        System.out.print("Enter your Registration Number: ");
                         
                         RegistrationNumber = inputR.nextLine();
                         
@@ -207,9 +188,8 @@ public class Registration {
                 }
 
             case "2":
-                System.out.println("You are considered as customer.");
                 break;
-            default:
+            
 
         }
 
@@ -220,10 +200,8 @@ public class Registration {
 
             myWriter.flush();
             myWriter.close();
-            System.out.println("Successfully wrote to the file.");
 
         } catch (IOException e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
         }
 
@@ -234,10 +212,8 @@ public class Registration {
 
             myWriter.flush();
             myWriter.close();
-            System.out.println("Successfully wrote to the file.");
 
         } catch (IOException e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
         }
     }
@@ -379,7 +355,7 @@ public class Registration {
 
         while (true) {
             Scanner inputLogIn = new Scanner(System.in);
-            System.out.println("If you want to exit the program enter 'E', or press (Enter) to continue :");
+            System.out.print("\nIf you want to exit the program enter 'E', or press (Enter) to continue: ");
             String exit = inputLogIn.nextLine().toUpperCase();
 
             if (exit.equals("E")) {
@@ -387,19 +363,19 @@ public class Registration {
             }
 
             Scanner inputSelller = new Scanner(System.in);
-            System.out.println("If you are a seller Enter 'S', if not press (Enter) to continue : ");
+            System.out.print("\nIf you are a seller Enter 'S', if not press (Enter) to continue: ");
             String IfSeller= inputSelller.nextLine().toUpperCase();
             
-            //not completed yet , need a confirm seller account method 
-            
-//            if(IfSeller.equals("S")) {
-//               
-//               break;
-//            }
+            if(IfSeller.equals("S")) {
+               Manager confirmsellerLogIn=new Manager();
+               confirmsellerLogIn.ConfirmSellerAcc();
+               
+               break;
+            }
           
-            System.out.println("Enter your phone to logIn:");
+            System.out.print("Enter your phone to logIn: ");
             String Phone = inputLogIn.nextLine();
-            System.out.println("Enter your password to logIn:");
+            System.out.print("Enter your password to logIn: ");
             String password = inputLogIn.nextLine();
             String filename = "LogInInfo.txt";
 
